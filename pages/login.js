@@ -1,8 +1,6 @@
-
-
 import React from "react";
 import Button from "@mui/material/Button";
-import { supabase } from "../../frontend2/utils/SupabaseClient";
+import { supabase } from "../utils/SupabaseClient";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import styles from "../styles/Hover.module.css";

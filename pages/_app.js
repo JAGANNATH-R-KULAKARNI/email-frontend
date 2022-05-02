@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { useEffect } from "react";
-import { supabase } from "../../frontend2/utils/SupabaseClient";
+import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
