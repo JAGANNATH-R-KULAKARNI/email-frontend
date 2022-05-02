@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
@@ -55,7 +56,7 @@ export default function Inbox(props) {
             {props.ham &&
               props.ham.map((item, index) => {
                 return (
-                  <div>
+                  <div key={item}>
                     <Paper
                       key={item}
                       elevation={1}
@@ -121,7 +122,7 @@ export default function Inbox(props) {
             {props.spam &&
               props.spam.map((item, index) => {
                 return (
-                  <div>
+                  <div key={item}>
                     <Paper
                       key={item}
                       elevation={1}
@@ -187,7 +188,7 @@ export default function Inbox(props) {
             {props.sent &&
               props.sent.map((item, index) => {
                 return (
-                  <div>
+                  <div key={item}>
                     <Paper
                       key={item}
                       elevation={1}
