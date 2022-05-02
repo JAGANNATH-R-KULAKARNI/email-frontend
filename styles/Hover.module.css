@@ -1,0 +1,23 @@
+.hovering {
+  background-color: black;
+  color: white;
+}
+
+.hovering:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: solid 2px black;
+}
+
+.hovering2 {
+  background-color: white;
+  color: black;
+  border: solid 2px black;
+}
+
+.hovering2:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
