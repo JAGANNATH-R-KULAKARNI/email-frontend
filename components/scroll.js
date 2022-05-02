@@ -1,6 +1,5 @@
 
 
-//
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -253,7 +252,10 @@ export default function SendEmail(props) {
             {to &&
               to.map((item, index) => {
                 return (
-                  <div style={{ paddingLeft: index == 0 ? "0px" : "5px" }}>
+                  <div
+                    style={{ paddingLeft: index == 0 ? "0px" : "5px" }}
+                    key={item}
+                  >
                     <Chip
                       label={item}
                       key={index}
