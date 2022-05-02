@@ -10,6 +10,7 @@ import ScrollUI from "../components/scroll";
 import useSWR from "swr";
 import Divider from "@mui/material/Divider";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Paper from "@mui/material/Paper";
 
 export default function Home() {
   const [msg, setMsg] = React.useState(null);
@@ -107,8 +108,11 @@ export default function Home() {
               width: "200px",
               height: "50px",
               borderRadius: "30px",
+              // fontSize: "18px",
+              backgroundColor: "black",
+              color: "white",
             }}
-            className={styles.hovering}
+            // className={styles.hovering}
             onClick={() => {
               setModal(true);
             }}
