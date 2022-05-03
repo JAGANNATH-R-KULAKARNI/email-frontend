@@ -1,5 +1,3 @@
-
-
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -239,8 +237,19 @@ export default function SendEmail(props) {
                 width: "100px",
                 height: "40px",
                 marginTop: "10px",
+                backgroundColor: "white",
+                color: "black",
+                border: "solid 2px black",
               }}
-              className={styles.hovering2}
+              // className={styles.hovering2}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "black";
+                e.target.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "white";
+                e.target.style.color = "black";
+              }}
               onClick={toHandler}
             >
               Add
@@ -322,8 +331,20 @@ export default function SendEmail(props) {
                 borderRadius: "20px",
                 width: loading ? "150px" : "100px",
                 height: "40px",
+                backgroundColor: "black",
+                color: "white",
               }}
-              className={styles.hovering}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "white";
+                e.target.style.color = "black";
+                e.target.style.boxShadow = "-2px 0px 7px 2px #black";
+                e.target.style.border = "solid 2px black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "black";
+                e.target.style.color = "white";
+              }}
+              // className={styles.hovering}
               onClick={sendTheEmail}
             >
               {loading ? "Sending..." : "Send"}
@@ -335,8 +356,19 @@ export default function SendEmail(props) {
                 borderRadius: "20px",
                 width: "100px",
                 height: "35px",
+                backgroundColor: "white",
+                color: "black",
+                border: "solid 2px black",
               }}
-              className={styles.hovering2}
+              // className={styles.hovering2}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "black";
+                e.target.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "white";
+                e.target.style.color = "black";
+              }}
             >
               Discard
             </Button>

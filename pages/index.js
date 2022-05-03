@@ -108,11 +108,20 @@ export default function Home() {
               width: "200px",
               height: "50px",
               borderRadius: "30px",
-              // fontSize: "18px",
               backgroundColor: "black",
               color: "white",
             }}
             // className={styles.hovering}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "white";
+              e.target.style.color = "black";
+              e.target.style.boxShadow = "-2px 0px 7px 2px #black";
+              e.target.style.border = "solid 2px black";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "black";
+              e.target.style.color = "white";
+            }}
             onClick={() => {
               setModal(true);
             }}
@@ -122,14 +131,24 @@ export default function Home() {
           </Button>
           <Button
             variant="contained"
-            startIcon={<LogoutIcon />}
             style={{
               width: "200px",
               height: "50px",
               borderRadius: "30px",
               float: "right",
+              backgroundColor: "white",
+              color: "black",
+              border: "solid 2px black",
             }}
-            className={styles.hovering2}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "black";
+              e.target.style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "white";
+              e.target.style.color = "black";
+            }}
+            // className={styles.hovering2}
             onClick={logOut}
           >
             LogOut

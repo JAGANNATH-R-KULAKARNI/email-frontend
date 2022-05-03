@@ -53,6 +53,18 @@ export default function Login() {
           height: "50px",
           // backgroundColor: "black",
           borderRadius: "30px",
+          backgroundColor: "black",
+          color: "white",
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.backgroundColor = "white";
+          e.target.style.color = "black";
+          e.target.style.boxShadow = "-2px 0px 7px 2px #black";
+          e.target.style.border = "solid 2px black";
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.backgroundColor = "black";
+          e.target.style.color = "white";
         }}
         onClick={signInWithGoogle}
         className={styles.hovering}
