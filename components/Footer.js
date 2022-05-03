@@ -92,7 +92,7 @@ function Footer() {
           <div style={{ display: "flex", paddingLeft: m1 ? "0%" : "12%" }}>
             <h4 className={styles.footer}>
               <a
-                href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
+                href=""
                 passHref={true}
                 target="_blank"
                 style={{
