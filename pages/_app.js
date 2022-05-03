@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 import NextNProgress from "nextjs-progressbar";
 import FooterUI from "../components/Footer";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const [status, setStatus] = React.useState(false);
@@ -76,6 +77,9 @@ function MyApp({ Component, pageProps }) {
         }
       }
     >
+      <Head>
+        <title>Email Classifier</title>
+      </Head>
       <NextNProgress color="black" startPosition={0.6} height={10} />
       <h1
         style={{
