@@ -106,22 +106,6 @@ function Footer() {
                 Copyright© Email Classifier
               </a>
             </h4>
-            <div style={{ paddingLeft: "1%" }} className={styles.linkedinIcon}>
-              <a
-                href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
-                passHref={true}
-                target="_blank"
-                style={{ textDecoration: "none", color: "black" }}
-                rel="noreferrer"
-              >
-                <LinkedInIcon
-                  style={{
-                    fontSize: "30px",
-                    marginTop: "18px",
-                  }}
-                />
-              </a>
-            </div>
           </div>
         </Grid>
       </Grid>
