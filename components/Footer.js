@@ -87,9 +87,9 @@ function Footer() {
               <li className={styles.footer}>Jagannath R Kulakarni</li>
               <li className={styles.footer}>Lohith C</li>
               <li className={styles.footer}>Raghav Somali</li>
+              <li className={styles.footer}>Prajwal Benedict</li>
               <li className={styles.footer}>Rocking star Yash</li>
               <li className={styles.footer}>Navneeth S</li>
-              <li className={styles.footer}>Prajwal B</li>
             </ul>
           </div>
         </Grid>
