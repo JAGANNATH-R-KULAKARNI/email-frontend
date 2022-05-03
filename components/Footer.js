@@ -108,7 +108,7 @@ function Footer() {
                 }}
                 rel="noreferrer"
               >
-                Copyright© Postman-Lite
+                Copyright© Email Classifier
               </a>
             </h4>
             <div style={{ paddingLeft: "1%" }} className={styles.linkedinIcon}>
