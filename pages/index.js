@@ -11,6 +11,7 @@ import useSWR from "swr";
 import Divider from "@mui/material/Divider";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Paper from "@mui/material/Paper";
+import ModalUI from "../components/Modal";
 
 export default function Home() {
   const [msg, setMsg] = React.useState(null);
@@ -21,12 +22,37 @@ export default function Home() {
   const [spam, setSpam] = React.useState([]);
   const [sentE, setSentE] = React.useState([]);
   const [processing, setProcessing] = React.useState(true);
+  const [analytics, setAnalytics] = React.useState(false);
+  const [fordis, setFordis] = React.useState(null);
+  const [fham, setFHam] = React.useState(null);
+  const [fspam, setFSpam] = React.useState(null);
 
   // const { data: data } = useSWR("profileindex", checkUser);
 
   const modalHandler = (sta) => {
     setModal(sta);
     router.reload(window.location.pathname);
+  };
+
+  const sendmailbro = async () => {
+    await axios
+      .post("/api/sendmail", {
+        from: "jagannath@gmail.com",
+        to: "placejag@gmail.com",
+        message: "Its really good",
+      })
+      .then((u) => {
+        console.log(u);
+        return;
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("not sent");
+      });
+  };
+
+  const toggleModal = () => {
+    setAnalytics(!analytics);
   };
 
   React.useEffect(() => {
@@ -78,6 +104,48 @@ export default function Home() {
 
       setHam(h);
       setSpam(s);
+
+      let fh = {};
+      let fp = {};
+
+      for (var i = 0; i <= 31; i++) {
+        fh[i] = 0;
+        fp[i] = 0;
+      }
+
+      let date1 = new Date();
+      for (var m = 0; m < h.length; m++) {
+        var date2 = new Date(h[m].created_at);
+
+        fh[date1.getDate() - date2.getDate()] =
+          fh[date1.getDate() - date2.getDate()] + 1;
+      }
+
+      for (var m = 0; m < s.length; m++) {
+        var date2 = new Date(s[m].created_at);
+
+        fp[date1.getDate() - date2.getDate()] =
+          fp[date1.getDate() - date2.getDate()] + 1;
+      }
+
+      const temp_arr = [];
+      for (var i = 0; i <= 31; i++) {
+        temp_arr.push({
+          name: i != 0 ? "" + i + " days ago" : "Today",
+          spam: fp[i],
+          ham: fh[i],
+        });
+      }
+
+      setFordis(temp_arr);
+      console.log("Ham");
+      console.log(fh);
+      console.log(fp);
+
+      setFHam(fh);
+      setFSpam(fp);
+
+      console.log(h);
       setSentE(se);
       setProcessing(false);
     }
@@ -89,9 +157,12 @@ export default function Home() {
     router.push("/login");
   }
   return (
-    <div>
+    <div style={{}}>
       {modal && email ? (
         <ScrollUI modalHandler={modalHandler} email={email} />
+      ) : null}
+      {analytics && fham && fspam && fordis ? (
+        <ModalUI toggleModal={toggleModal} fordis={fordis} />
       ) : null}
       <br />
       {email ? (
@@ -105,8 +176,8 @@ export default function Home() {
             variant="contained"
             startIcon={<AttachEmailIcon />}
             style={{
-              width: "200px",
-              height: "50px",
+              width: "230px",
+              height: "65px",
               borderRadius: "30px",
               backgroundColor: "black",
               color: "white",
@@ -152,6 +223,31 @@ export default function Home() {
             onClick={logOut}
           >
             LogOut
+          </Button>
+          <Button
+            variant="contained"
+            style={{
+              width: "200px",
+              height: "50px",
+              borderRadius: "30px",
+              float: "right",
+              backgroundColor: "white",
+              color: "black",
+              border: "solid 2px black",
+              marginRight: "155px",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "black";
+              e.target.style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "white";
+              e.target.style.color = "black";
+            }}
+            // className={styles.hovering2}
+            onClick={toggleModal}
+          >
+            Analytics
           </Button>
         </div>
       ) : null}

@@ -87,6 +87,32 @@ export default function SendEmail(props) {
     });
     const { data, error } = await supabase.from("email_c").insert(finalD);
 
+    to.map(async (item) => {
+      finalD.push({
+        fromu: props.email,
+        tou: item,
+        text: text,
+        type: type,
+        time: strTime,
+      });
+
+      await axios
+        .post("/api/sendmail", {
+          from: props.email,
+          to: item,
+          message: text,
+        })
+        .then((u) => {
+          console.log(u);
+
+          return;
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("not sent");
+        });
+    });
+
     if (data) {
       setSent2(true);
     }

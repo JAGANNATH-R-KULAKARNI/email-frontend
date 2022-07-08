@@ -80,6 +80,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Email Classifier</title>
       </Head>
+      <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+      <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+      <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+      <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
       <NextNProgress color="black" startPosition={0.6} height={10} />
       <h1
         style={{
