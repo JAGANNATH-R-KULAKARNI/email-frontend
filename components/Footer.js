@@ -32,7 +32,7 @@ function Footer() {
             </h3>
             <p style={{ fontSize: m1 ? "15px" : "10px" }}>
               {
-                '"Email Classifier" is an application used for Email spam detection and classification. This Appication is made using Next.js as frontend, Django as backend. Logistic Regression is used as an algorithm to classify emails with an accuracy of 98%'
+                '"Email Classifier" is an application used for Email spam detection and classification. This Appication is made using React.js as frontend, Flask as backend. We have used 6 Machine Learning Models'
               }
             </p>
           </div>
